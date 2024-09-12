@@ -1,0 +1,38 @@
+Package: spatialSimGP
+Title: Simulate Spatial Transcriptomics Data with the Mean-variance Relationship
+Version: 0.99.0
+Authors@R: c(
+    person(given = "Kinnary",
+           family = "Shah",
+           role = c("aut", "cre"),
+           email = "kinnaryshahh@gmail.com",
+           comment = c(ORCID = "0000-0001-7098-2116")),
+    person("Boyi", "Guo",
+           email = "boyi.guo.work@gmail.com",
+           role = c("aut"),
+           comment = c(ORCID = "0000-0003-2950-2349")),
+    person("Stephanie C.", "Hicks", 
+           email = "shicks19@jhu.edu", 
+           role = c("aut"), 
+           comment = c(ORCID = "0000-0002-7858-0231")))
+Description: This packages simulates spatial transcriptomics data with the mean-
+    variance relationship using a Gaussian Process model per gene.
+URL: https://github.com/kinnaryshah/spatialSimGP
+BugReports: https://github.com/kinnaryshah/spatialSimGP/issues
+Imports: SpatialExperiment, MASS, SummarizedExperiment
+License: MIT + file LICENSE
+Encoding: UTF-8
+Suggests: 
+    testthat (>= 3.0.0),
+    STexampleData,
+    ggplot2,
+    knitr
+biocViews: 
+    Spatial, Transcriptomics, GeneExpression
+Depends:
+    R (>= 4.4)
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Config/testthat/edition: 3
+VignetteBuilder: knitr
+
