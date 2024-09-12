@@ -1,9 +1,3 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
 # spatialSimGP
 
 ## Introduction
@@ -136,26 +130,6 @@ set.seed(16)
 spe <- spatial_simulate(n_genes, proportion, coords, range_sigma.sq, range_beta, length_scale, length_scale_option = "fixed")
 ```
 
-We can visualize the first gene in the simulated data below:
-
-```{r}
-df <- as.data.frame(cbind(spatialCoords(spe), expr = counts(spe)[1, ]))
-
-ggplot(df, aes(x = pxl_col_in_fullres, y = pxl_row_in_fullres, 
-               color = expr)) + 
-  geom_point(size = 2.2) + 
-  coord_fixed() + 
-  scale_y_reverse() + 
-  scale_color_gradient(low = "gray90", high = "blue", 
-                       trans = "sqrt", breaks = range(df$expr), 
-                       name = "counts") + 
-  theme_bw() + 
-  theme(plot.title = element_text(face = "italic"), 
-        panel.grid = element_blank(), 
-        axis.title = element_blank(), 
-        axis.text = element_blank(), 
-        axis.ticks = element_blank())
-```
 
 **(B) Simulating Data with Unique Length Scale**
 
@@ -193,27 +167,6 @@ colnames(coords) <- c("pxl_col_in_fullres", "pxl_row_in_fullres")
 set.seed(1)
 length_scale <- 60
 spe <- spatial_simulate(n_genes, proportion, coords, range_sigma.sq, range_beta, length_scale, length_scale_option = "fixed")
-```
-
-We can visualize the first gene in the simulated data below:
-
-```{r}
-df <- as.data.frame(cbind(spatialCoords(spe), expr = counts(spe)[1, ]))
-
-ggplot(df, aes(x = pxl_col_in_fullres, y = pxl_row_in_fullres, 
-               color = expr)) + 
-  geom_point(size = 5) + 
-  coord_fixed() + 
-  scale_y_reverse() + 
-  scale_color_gradient(low = "gray90", high = "blue", 
-                       trans = "sqrt", breaks = range(df$expr), 
-                       name = "counts") + 
-  theme_bw() + 
-  theme(plot.title = element_text(face = "italic"), 
-        panel.grid = element_blank(), 
-        axis.title = element_blank(), 
-        axis.text = element_blank(), 
-        axis.ticks = element_blank())
 ```
 
 Note: If you want to have complete control over each simulated gene, you
