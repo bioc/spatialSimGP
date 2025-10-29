@@ -1,6 +1,6 @@
 Package: spatialSimGP
 Title: Simulate Spatial Transcriptomics Data with the Mean-variance Relationship
-Version: 1.3.0
+Version: 1.4.0
 Authors@R: c(
     person(given = "Kinnary",
            family = "Shah",
